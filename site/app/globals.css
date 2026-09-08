@@ -280,89 +280,6 @@ h3 a:hover {
 .site-footer nav {
   font-size: 11px;
 }
-.resume-page {
-  padding: 64px 0;
-}
-.resume-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-.resume-heading h1 {
-  margin-bottom: 0;
-}
-.resume-intro {
-  color: var(--muted-foreground);
-  font-size: 15px;
-  line-height: 1.8;
-  max-width: 590px;
-  margin: 28px 0 48px;
-}
-.resume-columns {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 72px;
-  border-top: 1px solid var(--border);
-  padding-top: 40px;
-}
-.resume-section {
-  margin-bottom: 44px;
-}
-.resume-section h2 {
-  font-size: 28px;
-  margin-bottom: 28px;
-}
-.resume-section h3 {
-  font-size: 22px;
-}
-.resume-section p,
-.skills-list {
-  font-size: 13px;
-  color: var(--muted-foreground);
-  line-height: 1.8;
-}
-.resume-section p {
-  margin-bottom: 12px;
-}
-.skills-list dt {
-  font-weight: 600;
-  color: var(--foreground);
-  margin-top: 20px;
-}
-.skills-list dd {
-  margin: 5px 0 0;
-}
-.experience {
-  margin-bottom: 28px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
-.experience .experience-date {
-  font-size: 10px;
-  color: var(--primary);
-  margin-bottom: 8px;
-}
-.experience h3 {
-  margin-bottom: 6px;
-}
-.experience .experience-role {
-  color: var(--foreground);
-  font-size: 12px;
-}
-.resume-document {
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
-}
-.resume-document .section-heading {
-  margin-bottom: 20px;
-}
-.resume-pdf {
-  width: 100%;
-  height: 1100px;
-  border: 1px solid var(--border);
-  background: white;
-}
 @media (max-width: 850px) {
   .site-shell {
     padding: 0 28px;
@@ -373,10 +290,6 @@ h3 a:hover {
   }
   .portrait img {
     height: 370px;
-  }
-  .resume-columns {
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 36px;
   }
 }
 @media (max-width: 640px) {
@@ -438,20 +351,6 @@ h3 a:hover {
     align-items: start;
     flex-direction: column;
     gap: 16px;
-  }
-  .resume-page {
-    padding: 44px 0;
-  }
-  .resume-heading {
-    align-items: start;
-    flex-direction: column;
-  }
-  .resume-columns {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .resume-pdf {
-    height: 550px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

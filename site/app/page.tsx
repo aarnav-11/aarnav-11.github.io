@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { sitePath } from '@/lib/site';
 
@@ -37,12 +37,11 @@ export default function Home() {
             >
               Get in touch <ArrowUpRight aria-hidden="true" />
             </a>
-            <a className="text-link" href="#research">
-              Explore my research <ArrowDown size={16} aria-hidden="true" />
-            </a>
           </div>
         </div>
         <figure className="portrait">
+          {/* A plain image keeps the headshot as a static GitHub Pages asset. */}
+          {/* oxlint-disable-next-line next/no-img-element */}
           <img
             src={sitePath('/images/headshot.jpg')}
             alt="Aarnav Choudhary at UCLA"

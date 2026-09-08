@@ -64,9 +64,8 @@ export default function RootLayout({
               aarnav<span className="accent">.</span>
             </a>
             <nav aria-label="Main navigation">
-              <a href={sitePath('/#about')}>About</a>
               <a href={sitePath('/#research')}>Research</a>
-              <a href={sitePath('/resume')}>Resume ↗</a>
+              <a href="mailto:aarnav11@g.ucla.edu">Contact ↗</a>
             </nav>
           </header>
           {children}

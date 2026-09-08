@@ -31,7 +31,8 @@ jobs:
         run: |
           npm run build:pages
           test -f dist/client/index.html
-          test -f dist/client/resume.html
+          test -f dist/client/documents/jepa-lean-theorem-proving.pdf
+          test -f dist/client/images/headshot.jpg
         working-directory: site
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
