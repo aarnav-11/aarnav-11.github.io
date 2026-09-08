@@ -53,6 +53,56 @@ export default function Home() {
         </figure>
       </section>
 
+      <section className="profile-section" aria-labelledby="profile-title">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">A little more about me</p>
+            <h2 id="profile-title">Profile</h2>
+          </div>
+          <span className="section-note">UCLA · Class of 2028</span>
+        </div>
+        <div className="profile-grid">
+          <article className="profile-card">
+            <p className="profile-label">Education</p>
+            <h3>University of California, Los Angeles</h3>
+            <p>
+              B.S. in Computer Science and Mathematics
+              <br />
+              Expected May 2028
+            </p>
+            <p className="profile-detail">
+              <strong>3.93 / 4.00</strong> GPA · Dean’s honor list, 4 quarters
+            </p>
+          </article>
+          <article className="profile-card">
+            <p className="profile-label">Outside the lab</p>
+            <h3>Building, competing, and learning</h3>
+            <p>
+              William F. Sharpe Fellow · Bruin AI · Bruin Quant Traders ·
+              Founder, Olympic Robotics
+            </p>
+            <p className="profile-detail">Based in Los Angeles, California</p>
+          </article>
+          <article className="profile-card profile-card-wide">
+            <p className="profile-label">Tools I use</p>
+            <div className="skill-groups">
+              <p>
+                <strong>Languages</strong> Python, C++, JavaScript, SQL,
+                HTML/CSS
+              </p>
+              <p>
+                <strong>ML / AI</strong> PyTorch, TensorFlow, scikit-learn,
+                XGBoost, NumPy, pandas, LangChain, LangGraph
+              </p>
+              <p>
+                <strong>Systems</strong> React, Node.js, FastAPI, PostgreSQL,
+                Docker, Kubernetes, Helm, Kafka, AWS, GCP
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section
         className="research-section"
         id="research"

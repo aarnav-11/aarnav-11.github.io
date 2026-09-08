@@ -1,6 +1,6 @@
 # Aarnav Choudhary
 
-Personal website with research papers and contact links.
+Personal website with education, work experience, research papers, and contact links.
 
 The application is in `site/`. It uses React and Vinext, with a static build for GitHub Pages and a Worker build for Sites.
 
@@ -19,3 +19,5 @@ Source assets:
 - Asymmetric Collapse: [arXiv:2607.27240](https://arxiv.org/abs/2607.27240).
 
 The website's JEPA summary follows the September preprint.
+
+The home page includes education, honors, activities, and technical skills. Work history is available at `/experience`.

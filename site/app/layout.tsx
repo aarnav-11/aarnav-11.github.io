@@ -65,6 +65,7 @@ export default function RootLayout({
             </a>
             <nav aria-label="Main navigation">
               <a href={sitePath('/#research')}>Research</a>
+              <a href={sitePath('/experience')}>Experience</a>
               <a href="mailto:aarnav11@g.ucla.edu">Contact ↗</a>
             </nav>
           </header>
