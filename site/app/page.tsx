@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react';
-import { buttonVariants } from '@/components/ui/button';
 import { sitePath } from '@/lib/site';
 
 export default function Home() {
@@ -27,17 +26,6 @@ export default function Home() {
             proving, and AI safety. I also build AI systems that put research
             into practice.
           </p>
-          <div className="intro-links">
-            <a
-              className={buttonVariants({
-                className: 'primary-link',
-                size: 'lg',
-              })}
-              href="mailto:aarnav11@g.ucla.edu"
-            >
-              Get in touch <ArrowUpRight aria-hidden="true" />
-            </a>
-          </div>
         </div>
         <figure className="portrait">
           {/* A plain image keeps the headshot as a static GitHub Pages asset. */}

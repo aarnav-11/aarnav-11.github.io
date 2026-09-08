@@ -56,39 +56,40 @@ export default function RootLayout({
         </a>
         <div className="site-shell">
           <header className="site-header">
-            <a
-              className="wordmark"
-              href={sitePath('/')}
-              aria-label="Aarnav Choudhary home"
-            >
-              aarnav<span className="accent">.</span>
-            </a>
-            <nav aria-label="Main navigation">
+            <div className="header-identity">
+              <a
+                className="wordmark"
+                href={sitePath('/')}
+                aria-label="Aarnav Choudhary home"
+              >
+                aarnav<span className="accent">.</span>
+              </a>
+              <nav className="header-social" aria-label="Social links">
+                <a href="mailto:aarnav11@g.ucla.edu">aarnav11@g.ucla.edu</a>
+                <a
+                  href="https://www.linkedin.com/in/aarnavchou"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn ↗
+                </a>
+                <a
+                  href="https://github.com/aarnav-11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </nav>
+            </div>
+            <nav className="header-navigation" aria-label="Main navigation">
               <a href={sitePath('/#research')}>Research</a>
               <a href={sitePath('/experience')}>Experience</a>
-              <a href="mailto:aarnav11@g.ucla.edu">Contact ↗</a>
             </nav>
           </header>
           {children}
           <footer className="site-footer">
             <p>© 2026 Aarnav Choudhary</p>
-            <nav aria-label="Contact and social links">
-              <a href="mailto:aarnav11@g.ucla.edu">Email ↗</a>
-              <a
-                href="https://github.com/aarnav-11"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub ↗
-              </a>
-              <a
-                href="https://www.linkedin.com/in/aarnavchou"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn ↗
-              </a>
-            </nav>
           </footer>
         </div>
       </body>

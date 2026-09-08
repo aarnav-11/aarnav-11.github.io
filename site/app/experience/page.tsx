@@ -95,10 +95,6 @@ export default function Experience() {
         ))}
       </div>
       <div className="experience-footer">
-        <p>Interested in working together?</p>
-        <a className="text-link" href="mailto:aarnav11@g.ucla.edu">
-          Get in touch <ArrowUpRight size={16} aria-hidden="true" />
-        </a>
         <a className="text-link" href={sitePath('/#research')}>
           Read my research <ArrowUpRight size={16} aria-hidden="true" />
         </a>
