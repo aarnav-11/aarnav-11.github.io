@@ -289,7 +289,7 @@ summary:focus-visible {
 }
 
 .poker-king {
-  z-index: 2;
+  z-index: 3;
   bottom: -13%;
   left: 50%;
   width: min(87%, 690px);
@@ -297,8 +297,18 @@ summary:focus-visible {
   animation: poker-king-sway 9s ease-in-out infinite;
 }
 
+.poker-travel-chips {
+  z-index: 2;
+  top: 28%;
+  left: 4%;
+  width: 92%;
+  opacity: 0.9;
+  filter: drop-shadow(0 22px 24px rgb(20 21 26 / 22%));
+  animation: poker-travel-drift 18s ease-in-out infinite;
+}
+
 .poker-shuffle-front {
-  z-index: 3;
+  z-index: 4;
   right: -23%;
   bottom: -12%;
   width: 116%;
@@ -308,7 +318,7 @@ summary:focus-visible {
 
 .poker-scene-wash {
   position: absolute;
-  z-index: 4;
+  z-index: 5;
   inset: 0;
   box-shadow:
     inset 0 0 90px rgb(16 24 34 / 26%),
@@ -348,6 +358,19 @@ summary:focus-visible {
   }
   50% {
     transform: translate3d(-49%, -2.5%, 85px) rotate(1.6deg);
+  }
+}
+
+@keyframes poker-travel-drift {
+  0%,
+  100% {
+    transform: translate3d(-5%, 3%, 90px) rotate(-7deg) scale(0.94);
+  }
+  45% {
+    transform: translate3d(5%, -4%, 115px) rotate(5deg) scale(1.03);
+  }
+  72% {
+    transform: translate3d(1%, 5%, 100px) rotate(1deg) scale(0.98);
   }
 }
 
@@ -510,6 +533,10 @@ summary:focus-visible {
 
   .poker-king {
     transform: translate3d(-50%, 0, 55px);
+  }
+
+  .poker-travel-chips {
+    transform: translate3d(0, 0, 90px) rotate(-2deg) scale(0.98);
   }
 
   .poker-shuffle-front {

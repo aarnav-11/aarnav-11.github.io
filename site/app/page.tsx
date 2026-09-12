@@ -124,7 +124,7 @@ export default function Home() {
 
           <aside
             className="home-visual"
-            aria-label="A gentle paper theater of a king, cards, and poker chips"
+            aria-label="A gentle paper theater of a king, hobby-themed cards, and travel-inspired poker chips"
           >
             <div className="poker-scene" aria-hidden="true">
               {/* These are pre-composited static art layers, not content images. */}
@@ -140,7 +140,7 @@ export default function Home() {
               {/* oxlint-disable-next-line next/no-img-element */}
               <img
                 className="poker-layer poker-shuffle poker-shuffle-rear"
-                src="/images/poker-shuffle.webp"
+                src="/images/poker-hobbies-shuffle.webp"
                 alt=""
                 width={1000}
                 height={914}
@@ -155,8 +155,16 @@ export default function Home() {
               />
               {/* oxlint-disable-next-line next/no-img-element */}
               <img
+                className="poker-layer poker-travel-chips"
+                src="/images/poker-travel-chips.webp"
+                alt=""
+                width={900}
+                height={600}
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
                 className="poker-layer poker-shuffle poker-shuffle-front"
-                src="/images/poker-shuffle.webp"
+                src="/images/poker-hobbies-shuffle.webp"
                 alt=""
                 width={1000}
                 height={914}
