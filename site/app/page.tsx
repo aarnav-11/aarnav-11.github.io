@@ -124,15 +124,45 @@ export default function Home() {
 
           <aside
             className="home-visual"
-            aria-label="Portrait of Aarnav Choudhary"
+            aria-label="A gentle paper theater of a king, cards, and poker chips"
           >
-            <img
-              className="home-visual-image"
-              src="/images/headshot.jpg"
-              alt="Aarnav Choudhary at UCLA"
-              width={1280}
-              height={1920}
-            />
+            <div className="poker-scene" aria-hidden="true">
+              {/* These are pre-composited static art layers, not content images. */}
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-stage"
+                src="/images/poker-stage.webp"
+                alt=""
+                width={1122}
+                height={1402}
+                fetchPriority="high"
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-shuffle poker-shuffle-rear"
+                src="/images/poker-shuffle.webp"
+                alt=""
+                width={1000}
+                height={914}
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-king"
+                src="/images/poker-king.webp"
+                alt=""
+                width={900}
+                height={1350}
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-shuffle poker-shuffle-front"
+                src="/images/poker-shuffle.webp"
+                alt=""
+                width={1000}
+                height={914}
+              />
+              <div className="poker-scene-wash" />
+            </div>
           </aside>
         </div>
       </article>

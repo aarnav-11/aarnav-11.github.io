@@ -248,13 +248,120 @@ summary:focus-visible {
   background: var(--surface-subtle);
 }
 
-.home-visual-image {
+.poker-scene {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
+  perspective: 900px;
+  background: #173557;
+}
+
+.poker-layer {
+  position: absolute;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.poker-stage {
+  z-index: 0;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   object-position: center;
+  animation: poker-stage-drift 26s ease-in-out infinite alternate;
+}
+
+.poker-shuffle {
+  filter: drop-shadow(0 18px 22px rgb(27 21 18 / 18%));
+}
+
+.poker-shuffle-rear {
+  z-index: 1;
+  top: 3%;
+  left: -15%;
+  width: 126%;
+  opacity: 0.72;
+  animation: poker-shuffle-rear 21s ease-in-out infinite;
+}
+
+.poker-king {
+  z-index: 2;
+  bottom: -13%;
+  left: 50%;
+  width: min(87%, 690px);
+  filter: drop-shadow(0 28px 30px rgb(23 15 10 / 24%));
+  animation: poker-king-sway 9s ease-in-out infinite;
+}
+
+.poker-shuffle-front {
+  z-index: 3;
+  right: -23%;
+  bottom: -12%;
+  width: 116%;
+  opacity: 0.84;
+  animation: poker-shuffle-front 15s ease-in-out infinite;
+}
+
+.poker-scene-wash {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  box-shadow:
+    inset 0 0 90px rgb(16 24 34 / 26%),
+    inset 0 -80px 100px rgb(71 26 20 / 18%);
+  pointer-events: none;
+}
+
+@keyframes poker-stage-drift {
+  0% {
+    transform: translate3d(-1.5%, -1%, -40px) scale(1.07) rotate(-0.4deg);
+  }
+  50% {
+    transform: translate3d(1.25%, 0.5%, -20px) scale(1.11) rotate(0.25deg);
+  }
+  100% {
+    transform: translate3d(-0.5%, 1%, -30px) scale(1.08) rotate(-0.2deg);
+  }
+}
+
+@keyframes poker-shuffle-rear {
+  0%,
+  100% {
+    transform: translate3d(-7%, -3%, 10px) rotate(-10deg) scale(0.94);
+  }
+  33% {
+    transform: translate3d(7%, 4%, 35px) rotate(2deg) scale(1.01);
+  }
+  66% {
+    transform: translate3d(-1%, 8%, 18px) rotate(8deg) scale(0.97);
+  }
+}
+
+@keyframes poker-king-sway {
+  0%,
+  100% {
+    transform: translate3d(-51%, 2%, 55px) rotate(-1.8deg);
+  }
+  50% {
+    transform: translate3d(-49%, -2.5%, 85px) rotate(1.6deg);
+  }
+}
+
+@keyframes poker-shuffle-front {
+  0%,
+  100% {
+    transform: translate3d(8%, 10%, 120px) rotate(13deg) scale(1.04);
+  }
+  35% {
+    transform: translate3d(-8%, -1%, 150px) rotate(-3deg) scale(1.12);
+  }
+  70% {
+    transform: translate3d(2%, -8%, 125px) rotate(-14deg) scale(1.07);
+  }
 }
 
 .bio-gallery,
@@ -371,10 +478,13 @@ summary:focus-visible {
     --surface-subtle: #242321;
   }
 
-  .home-visual-image,
   .bio-gallery img,
   .bio-media-placeholder {
     filter: brightness(0.24);
+  }
+
+  .poker-scene {
+    filter: brightness(0.82) saturate(0.9);
   }
 }
 
@@ -384,6 +494,26 @@ summary:focus-visible {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .poker-layer {
+    animation: none !important;
+  }
+
+  .poker-stage {
+    transform: scale(1.08);
+  }
+
+  .poker-shuffle-rear {
+    transform: translate3d(-2%, 2%, 10px) rotate(-5deg) scale(0.98);
+  }
+
+  .poker-king {
+    transform: translate3d(-50%, 0, 55px);
+  }
+
+  .poker-shuffle-front {
+    transform: translate3d(2%, 3%, 120px) rotate(4deg) scale(1.06);
   }
 }
 
