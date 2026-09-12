@@ -179,7 +179,7 @@ summary:focus-visible {
   content: '';
 }
 
-.placeholder-link {
+.text-link {
   color: var(--muted);
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--muted) 30%, transparent);

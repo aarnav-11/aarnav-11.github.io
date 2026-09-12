@@ -8,6 +8,6 @@ npm ci
 npm run dev
 ```
 
-The homepage is in `site/app/page.tsx`, the expanded bio is in `site/app/long-bio.tsx`, and the styles are in `site/app/globals.css`. All homepage copy is lorem ipsum, and the image slots use local SVG placeholders in `site/public/images/`.
+The homepage is in `site/app/page.tsx`, the expanded bio is in `site/app/long-bio.tsx`, and the styles are in `site/app/globals.css`. The homepage introduces Aarnav's work and research at UCLA.
 
-The layout includes the Default/Long bio toggle, a two-column notes list, dated blog rows, and a sticky image panel on wide screens. It follows the system light/dark theme. Homepage entries have no article destinations. Existing article routes and personal assets remain in the project for later use.
+The layout includes the Default/Long bio toggle, a two-column interests list, linked research rows, and a sticky portrait on wide screens. It follows the system light/dark theme. Existing article routes and personal assets remain in the project for later use.

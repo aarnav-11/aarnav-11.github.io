@@ -13,16 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Lorem ipsum',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  title: 'Aarnav Choudhary',
+  description:
+    'UCLA computer science and mathematics student researching efficient post-training, model merging, and theorem proving.',
   openGraph: {
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Aarnav Choudhary',
+    description:
+      'UCLA computer science and mathematics student researching efficient post-training, model merging, and theorem proving.',
   },
   twitter: {
     card: 'summary',
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Aarnav Choudhary',
+    description:
+      'UCLA computer science and mathematics student researching efficient post-training, model merging, and theorem proving.',
   },
 };
 

@@ -3,28 +3,30 @@
 import { useState } from 'react';
 import LongBio from './long-bio';
 
-const notes = [
-  'Lorem ipsum dolor',
-  'Consectetur adipiscing',
-  'Sed do eiusmod tempor',
-  'Incididunt ut labore',
-  'Dolore magna aliqua',
-  'Ut enim ad minim',
-  'Quis nostrud',
-  'Exercitation ullamco',
-  'Laboris nisi aliquip',
-  'Commodo consequat',
+const interests = [
+  'Efficient post-training',
+  'Machine learning',
+  'Model merging',
+  'AI safety',
+  'Self-supervised learning',
+  'Lean theorem proving',
+  'Computer science',
+  'Mathematics',
 ];
 
-const blogs = [
-  ['Lorem ipsum dolor sit amet', 'Lorem 0000'],
-  ['Consectetur adipiscing elit sed do eiusmod tempor', 'Dolorem 0000'],
-  ['Ut enim ad minim veniam quis nostrud', 'Dolorem 0000'],
-  ['Duis aute irure dolor in reprehenderit', 'Ipsum 0000'],
-  ['Excepteur sint occaecat cupidatat non proident', 'Lorem 0000'],
-  ['Sed ut perspiciatis unde omnis', 'Dolorem 0000'],
-  ['Nemo enim ipsam voluptatem', 'Sit 0000'],
-  ['Neque porro quisquam est', 'Dolorem 0000'],
+const research = [
+  {
+    title:
+      'Asymmetric Collapse in Model Merging: When Refusal Overwrites Recognition',
+    date: 'July 2026',
+    href: 'https://arxiv.org/abs/2607.27240',
+  },
+  {
+    title:
+      'Predicting the Next State Is Not Enough: JEPA Representations for Lean Theorem Proving',
+    date: '2026',
+    href: '/documents/jepa-lean-theorem-proving.pdf',
+  },
 ];
 
 export default function Home() {
@@ -36,7 +38,7 @@ export default function Home() {
         <div className="home-layout">
           <div className="home-copy">
             <h1 className="site-title">
-              <span className="site-title-at">@</span>loremipsum
+              <span className="site-title-at">@</span>aarnav
             </h1>
 
             <section className="bio-section" aria-label="Biography">
@@ -71,21 +73,17 @@ export default function Home() {
                 ) : (
                   <>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut{' '}
-                      <span className="placeholder-link">labore</span> et dolore
-                      magna aliqua. Ut enim ad minim veniam, quis nostrud{' '}
-                      <span className="placeholder-link">exercitation</span>{' '}
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit.
-                    </p>
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium, totam rem
-                      aperiam, eaque ipsa quae ab illo inventore veritatis et
-                      quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                      enim ipsam voluptatem quia voluptas sit aspernatur aut{' '}
-                      <span className="placeholder-link">odit aut fugit</span>.
+                      I’m a student and engineer at UCLA, where I study computer
+                      science and mathematics and conduct research at the{' '}
+                      <a
+                        className="text-link"
+                        href="https://baharanm.github.io/bigml/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BigML Lab
+                      </a>
+                      .
                     </p>
                   </>
                 )}
@@ -94,21 +92,28 @@ export default function Home() {
 
             <div className="writing-index">
               <section aria-labelledby="notes-heading">
-                <h2 id="notes-heading">Notes</h2>
+                <h2 id="notes-heading">Interests</h2>
                 <ul className="notes-list">
-                  {notes.map((note) => (
-                    <li key={note}>
-                      <span className="placeholder-link">{note}</span>
+                  {interests.map((interest) => (
+                    <li key={interest}>
+                      <span>{interest}</span>
                     </li>
                   ))}
                 </ul>
               </section>
               <section aria-labelledby="blogs-heading">
-                <h2 id="blogs-heading">Blogs</h2>
+                <h2 id="blogs-heading">Research</h2>
                 <div className="blogs-list">
-                  {blogs.map(([title, date]) => (
+                  {research.map(({ title, date, href }) => (
                     <div className="blog-row" key={title}>
-                      <span>{title}</span>
+                      <a
+                        className="text-link"
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {title}
+                      </a>
                       <span className="blog-date">{date}</span>
                     </div>
                   ))}
@@ -117,13 +122,16 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="home-visual" aria-label="Image placeholder">
+          <aside
+            className="home-visual"
+            aria-label="Portrait of Aarnav Choudhary"
+          >
             <img
               className="home-visual-image"
-              src="/images/placeholder.svg"
-              alt="Lorem ipsum image placeholder"
-              width={800}
-              height={1200}
+              src="/images/headshot.jpg"
+              alt="Aarnav Choudhary at UCLA"
+              width={1280}
+              height={1920}
             />
           </aside>
         </div>
