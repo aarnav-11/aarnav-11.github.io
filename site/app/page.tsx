@@ -1,96 +1,133 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowUpRight, Mail } from 'lucide-react';
-import { notes, writing } from '@/lib/content';
+'use client';
+
+import { useState } from 'react';
+import LongBio from './long-bio';
+
+const notes = [
+  'Lorem ipsum dolor',
+  'Consectetur adipiscing',
+  'Sed do eiusmod tempor',
+  'Incididunt ut labore',
+  'Dolore magna aliqua',
+  'Ut enim ad minim',
+  'Quis nostrud',
+  'Exercitation ullamco',
+  'Laboris nisi aliquip',
+  'Commodo consequat',
+];
+
+const blogs = [
+  ['Lorem ipsum dolor sit amet', 'Lorem 0000'],
+  ['Consectetur adipiscing elit sed do eiusmod tempor', 'Dolorem 0000'],
+  ['Ut enim ad minim veniam quis nostrud', 'Dolorem 0000'],
+  ['Duis aute irure dolor in reprehenderit', 'Ipsum 0000'],
+  ['Excepteur sint occaecat cupidatat non proident', 'Lorem 0000'],
+  ['Sed ut perspiciatis unde omnis', 'Dolorem 0000'],
+  ['Nemo enim ipsam voluptatem', 'Sit 0000'],
+  ['Neque porro quisquam est', 'Dolorem 0000'],
+];
 
 export default function Home() {
+  const [isLongBio, setIsLongBio] = useState(false);
+
   return (
-    <main className="site-shell">
-      <header className="site-header">
-        <Link className="site-name" href="/" aria-label="aarnav home">
-          aarnav
-        </Link>
-        <nav className="social-links" aria-label="Social links">
-          <a href="mailto:aarnav11@g.ucla.edu" aria-label="Email aarnav">
-            <Mail size={15} strokeWidth={1.8} />
-            <span>email</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aarnavchou"
-            target="_blank"
-            rel="noreferrer"
-          >
-            linkedin
-            <ArrowUpRight size={13} strokeWidth={1.8} />
-          </a>
-          <a
-            href="https://www.github.com/aarnav-11"
-            target="_blank"
-            rel="noreferrer"
-          >
-            github
-            <ArrowUpRight size={13} strokeWidth={1.8} />
-          </a>
-          <a href="https://x.com/aarnav2006" target="_blank" rel="noreferrer">
-            x
-            <ArrowUpRight size={13} strokeWidth={1.8} />
-          </a>
-        </nav>
-      </header>
+    <main className="site-shell home-shell">
+      <article className="content-frame">
+        <div className="home-layout">
+          <div className="home-copy">
+            <h1 className="site-title">
+              <span className="site-title-at">@</span>loremipsum
+            </h1>
 
-      <section className="intro" aria-labelledby="intro-title">
-        <div className="intro-copy">
-          <p className="eyebrow">CS + Math · UCLA</p>
-          <h1 id="intro-title">I’m a student who likes making complex ideas clear.</h1>
-          <p className="bio">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. I study computer science and
-            mathematics at UCLA, and I enjoy learning in public through writing, research, and
-            small software projects.
-          </p>
-        </div>
-        <Image
-          className="headshot"
-          src="/images/headshot.jpg"
-          alt="Portrait of aarnav"
-          width={176}
-          height={176}
-        />
-      </section>
+            <section className="bio-section" aria-label="Biography">
+              <div className="bio-toggle">
+                <span>Bio</span>
+                <div
+                  className="bio-toggle-options"
+                  role="group"
+                  aria-label="Bio length"
+                >
+                  <button
+                    type="button"
+                    aria-controls="bio-content"
+                    aria-pressed={!isLongBio}
+                    onClick={() => setIsLongBio(false)}
+                  >
+                    Default
+                  </button>
+                  <button
+                    type="button"
+                    aria-controls="bio-content"
+                    aria-pressed={isLongBio}
+                    onClick={() => setIsLongBio(true)}
+                  >
+                    Long
+                  </button>
+                </div>
+              </div>
+              <div id="bio-content">
+                {isLongBio ? (
+                  <LongBio />
+                ) : (
+                  <>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut{' '}
+                      <span className="placeholder-link">labore</span> et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud{' '}
+                      <span className="placeholder-link">exercitation</span>{' '}
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit.
+                    </p>
+                    <p>
+                      Sed ut perspiciatis unde omnis iste natus error sit
+                      voluptatem accusantium doloremque laudantium, totam rem
+                      aperiam, eaque ipsa quae ab illo inventore veritatis et
+                      quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                      enim ipsam voluptatem quia voluptas sit aspernatur aut{' '}
+                      <span className="placeholder-link">odit aut fugit</span>.
+                    </p>
+                  </>
+                )}
+              </div>
+            </section>
 
-      <section className="content-section" aria-labelledby="notes-title">
-        <div className="section-heading">
-          <h2 id="notes-title">Notes</h2>
-          <span>ideas in progress</span>
-        </div>
-        <div className="link-list">
-          {notes.map((note) => (
-            <Link className="content-link" href={`/notes/${note.slug}`} key={note.slug}>
-              <span>{note.title}</span>
-              <span className="link-description">{note.description}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
+            <div className="writing-index">
+              <section aria-labelledby="notes-heading">
+                <h2 id="notes-heading">Notes</h2>
+                <ul className="notes-list">
+                  {notes.map((note) => (
+                    <li key={note}>
+                      <span className="placeholder-link">{note}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <section aria-labelledby="blogs-heading">
+                <h2 id="blogs-heading">Blogs</h2>
+                <div className="blogs-list">
+                  {blogs.map(([title, date]) => (
+                    <div className="blog-row" key={title}>
+                      <span>{title}</span>
+                      <span className="blog-date">{date}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </div>
+          </div>
 
-      <section className="content-section" aria-labelledby="writing-title">
-        <div className="section-heading">
-          <h2 id="writing-title">Writing</h2>
-          <span>recent posts</span>
+          <aside className="home-visual" aria-label="Image placeholder">
+            <img
+              className="home-visual-image"
+              src="/images/placeholder.svg"
+              alt="Lorem ipsum image placeholder"
+              width={800}
+              height={1200}
+            />
+          </aside>
         </div>
-        <div className="writing-list">
-          {writing.map((post) => (
-            <Link className="writing-row" href={`/writing/${post.slug}`} key={post.slug}>
-              <span>{post.title}</span>
-              <time>{post.date}</time>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <footer className="site-footer">
-        <span>© 2026 aarnav</span>
-        <Link href="/documents/jepa-lean-theorem-proving.pdf">research</Link>
-      </footer>
+      </article>
     </main>
   );
 }

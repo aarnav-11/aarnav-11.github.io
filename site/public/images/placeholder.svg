@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+  <rect width="800" height="1200" fill="#e8e7e4" />
+  <path d="M0 0 800 1200M800 0 0 1200" fill="none" stroke="#a7a6a2" stroke-opacity=".3" />
+  <rect x="284" y="572" width="232" height="56" rx="4" fill="#e8e7e4" />
+  <text x="400" y="607" fill="#777671" font-family="Georgia, serif" font-size="24" text-anchor="middle">Lorem ipsum</text>
+</svg>

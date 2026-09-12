@@ -13,21 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'aarnav — CS and Math student at UCLA',
-  description:
-    'Aarnav is a CS and Math student at UCLA. Notes, writing, and projects.',
+  title: 'Lorem ipsum',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   openGraph: {
-    title: 'aarnav — CS and Math student at UCLA',
-    description:
-      'Aarnav is a CS and Math student at UCLA. Notes, writing, and projects.',
-    images: ['/og.png'],
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'aarnav — CS and Math student at UCLA',
-    description:
-      'Aarnav is a CS and Math student at UCLA. Notes, writing, and projects.',
-    images: ['/og.png'],
+    card: 'summary',
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
 };
 
@@ -37,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
