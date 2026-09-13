@@ -3,15 +3,23 @@
 import { useState } from 'react';
 import LongBio from './long-bio';
 
-const interests = [
-  'Efficient post-training',
-  'Machine learning',
-  'Model merging',
-  'AI safety',
-  'Self-supervised learning',
-  'Lean theorem proving',
-  'Computer science',
-  'Mathematics',
+const experience = [
+  {
+    title: 'BigML Lab @ UCLA — Undergraduate Researcher',
+    date: 'Aug 2026–Present',
+  },
+  {
+    title: 'EXL (EXLData.ai) — Data Management Intern',
+    date: 'Summer 2026',
+  },
+  {
+    title: 'Amazon Web Services — AI Software Engineering Intern',
+    date: 'Spring 2026',
+  },
+  {
+    title: 'Diro — Software Engineering Intern (AI)',
+    date: 'Summer 2025',
+  },
 ];
 
 const research = [
@@ -92,14 +100,15 @@ export default function Home() {
 
             <div className="writing-index">
               <section aria-labelledby="notes-heading">
-                <h2 id="notes-heading">Interests</h2>
-                <ul className="notes-list">
-                  {interests.map((interest) => (
-                    <li key={interest}>
-                      <span>{interest}</span>
-                    </li>
+                <h2 id="notes-heading">Experience</h2>
+                <div className="blogs-list">
+                  {experience.map(({ title, date }) => (
+                    <div className="blog-row" key={title}>
+                      <span>{title}</span>
+                      <span className="blog-date">{date}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </section>
               <section aria-labelledby="blogs-heading">
                 <h2 id="blogs-heading">Research</h2>
