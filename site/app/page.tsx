@@ -5,6 +5,10 @@ import LongBio from './long-bio';
 
 const experience = [
   {
+    title: 'UCLA DTS — AI Software Engineer',
+    date: 'Aug 2026–Present',
+  },
+  {
     title: 'BigML Lab @ UCLA — Undergraduate Researcher',
     date: 'Aug 2026–Present',
   },
@@ -138,15 +142,44 @@ export default function Home() {
 
           <aside
             className="home-visual"
-            aria-label="A paper king holding a poker chip"
+            aria-label="A gently moving paper theater with a king and playing cards"
           >
-            <img
-              className="home-visual-image"
-              src="/images/poker-king.webp"
-              alt="A paper king holding a poker chip"
-              width={900}
-              height={1350}
-            />
+            <div className="poker-scene" aria-hidden="true">
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-stage"
+                src="/images/poker-stage.webp"
+                alt=""
+                width={1122}
+                height={1402}
+                fetchPriority="high"
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-shuffle poker-shuffle-rear"
+                src="/images/poker-shuffle.webp"
+                alt=""
+                width={1000}
+                height={914}
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-king"
+                src="/images/poker-king.webp"
+                alt=""
+                width={900}
+                height={1350}
+              />
+              {/* oxlint-disable-next-line next/no-img-element */}
+              <img
+                className="poker-layer poker-shuffle poker-shuffle-front"
+                src="/images/poker-shuffle.webp"
+                alt=""
+                width={1000}
+                height={914}
+              />
+              <div className="poker-scene-wash" />
+            </div>
           </aside>
         </div>
       </article>
