@@ -26,14 +26,19 @@ const research = [
   {
     title:
       'Asymmetric Collapse in Model Merging: When Refusal Overwrites Recognition',
-    date: 'July 2026',
+    date: 'COLM 2026 · AIW · Adv-ML × CoTMA Frontiers',
     href: 'https://arxiv.org/abs/2607.27240',
   },
   {
     title:
       'Predicting the Next State Is Not Enough: JEPA Representations for Lean Theorem Proving',
-    date: '2026',
+    date: 'MathNLP @ EMNLP 2026',
     href: '/documents/jepa-lean-theorem-proving.pdf',
+  },
+  {
+    title: 'ICLR 2027 submission',
+    date: '2027',
+    href: 'https://openreview.net/forum?id=5okwaPNsME',
   },
 ];
 
@@ -133,14 +138,14 @@ export default function Home() {
 
           <aside
             className="home-visual"
-            aria-label="Portrait of Aarnav Choudhary"
+            aria-label="A paper king holding a poker chip"
           >
             <img
               className="home-visual-image"
-              src="/images/headshot.jpg"
-              alt="Aarnav Choudhary at UCLA"
-              width={1280}
-              height={1920}
+              src="/images/poker-king.webp"
+              alt="A paper king holding a poker chip"
+              width={900}
+              height={1350}
             />
           </aside>
         </div>
