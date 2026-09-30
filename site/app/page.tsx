@@ -17,7 +17,7 @@ const experience = [
     date: 'Summer 2026',
   },
   {
-    title: 'Amazon Web Services — AI Software Engineering Intern',
+    title: '(Contract) Amazon Web Services — AI Software Engineering Intern',
     date: 'Spring 2026',
   },
   {
@@ -28,21 +28,22 @@ const experience = [
 
 const research = [
   {
-    title:
-      'Asymmetric Collapse in Model Merging: When Refusal Overwrites Recognition',
-    date: 'COLM 2026 · AIW · Adv-ML × CoTMA Frontiers',
-    href: 'https://arxiv.org/abs/2607.27240',
+    title: 'ICML 2027 submission',
+    date: 'Under review · ICML 2027',
+    href: 'https://openreview.net/forum?id=5okwaPNsME',
   },
   {
     title:
       'Predicting the Next State Is Not Enough: JEPA Representations for Lean Theorem Proving',
-    date: 'MathNLP @ EMNLP 2026',
+    date: 'MathNLP Workshop: EMNLP 2026',
     href: '/documents/jepa-lean-theorem-proving.pdf',
   },
   {
-    title: 'ICLR 2027 submission',
-    date: '2027',
-    href: 'https://openreview.net/forum?id=5okwaPNsME',
+    title:
+      'Asymmetric Collapse in Model Merging: When Refusal Overwrites Recognition',
+    date:
+      'AIW Workshop: COLM 2026 · Adv-ML × CoTMA Frontiers Workshop: COLM 2026',
+    href: 'https://arxiv.org/abs/2607.27240',
   },
 ];
 
@@ -173,10 +174,10 @@ export default function Home() {
               {/* oxlint-disable-next-line next/no-img-element */}
               <img
                 className="poker-layer poker-shuffle poker-shuffle-front"
-                src="/images/poker-shuffle.webp"
+                src="/images/poker-shuffle-front.webp"
                 alt=""
-                width={1000}
-                height={914}
+                width={1312}
+                height={1199}
               />
               <div className="poker-scene-wash" />
             </div>
