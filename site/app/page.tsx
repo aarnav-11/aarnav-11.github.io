@@ -28,8 +28,9 @@ const experience = [
 
 const research = [
   {
-    title: 'ICML 2027 submission',
-    date: 'Under review · ICML 2027',
+    title:
+      'Beyond Prompt Selection: Learning to Allocate Rollouts for Efficient GRPO Training',
+    date: 'Under review · ICLR 2027',
     href: 'https://openreview.net/forum?id=5okwaPNsME',
   },
   {
@@ -124,7 +125,7 @@ export default function Home() {
                 <h2 id="blogs-heading">Research</h2>
                 <div className="blogs-list">
                   {research.map(({ title, date, href }) => (
-                    <div className="blog-row" key={title}>
+                    <div className="blog-row research-row" key={title}>
                       <a
                         className="text-link"
                         href={href}
