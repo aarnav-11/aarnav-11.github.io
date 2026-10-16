@@ -56,9 +56,43 @@ export default function Home() {
       <article className="content-frame">
         <div className="home-layout">
           <div className="home-copy">
-            <h1 className="site-title">
-              <span className="site-title-at">@</span>aarnav
-            </h1>
+            <header className="site-header">
+              <h1 className="site-title">
+                <span className="site-title-at">@</span>aarnav
+              </h1>
+              <nav
+                className="profile-links"
+                aria-label="Contact and profile links"
+              >
+                <a
+                  className="text-link"
+                  href="/documents/aarnav-choudhary-resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume
+                </a>
+                <a className="text-link" href="mailto:aarnav11@g.ucla.edu">
+                  Email
+                </a>
+                <a
+                  className="text-link"
+                  href="https://github.com/aarnav-11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  className="text-link"
+                  href="https://www.linkedin.com/in/aarnavchou"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </nav>
+            </header>
 
             <section className="bio-section" aria-label="Biography">
               <div className="bio-toggle">

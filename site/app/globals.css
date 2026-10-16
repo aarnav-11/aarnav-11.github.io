@@ -131,6 +131,23 @@ summary:focus-visible {
   line-height: 0;
 }
 
+.site-header {
+  margin-bottom: 2.25rem;
+}
+
+.site-header .site-title {
+  margin-bottom: 0.65rem;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .bio-section {
   margin-bottom: 3.25rem;
 }
