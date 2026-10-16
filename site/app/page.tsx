@@ -91,6 +91,14 @@ export default function Home() {
                 >
                   LinkedIn
                 </a>
+                <a
+                  className="text-link"
+                  href="https://x.com/aarnav2006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  X
+                </a>
               </nav>
             </header>
 

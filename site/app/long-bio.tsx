@@ -1,3 +1,5 @@
+import TravelMap from './travel-map';
+
 export default function LongBio() {
   return (
     <div className="long-bio">
@@ -39,6 +41,36 @@ export default function LongBio() {
         </a>
         .
       </p>
+      <p>
+        Outside of research, I enjoy poker for the mix of strategy, probability,
+        and making decisions with incomplete information. I also play Catan and
+        FIFA, and used to play Fortnite. I’m a Manchester United fan, too.
+      </p>
+      <p>
+        I played tennis for 14 years, but I’ll play just about any sport,
+        including basketball, cricket, and soccer. These days, I lift, too.
+      </p>
+      <figure className="bio-inline-media bio-photo-placeholder">
+        Tennis photo placeholder
+      </figure>
+      <p>
+        I love traveling and getting to know new places through their food. I
+        enjoy finding somewhere new to eat as much as cooking something myself.
+        You can follow my running list of favorites on{' '}
+        <a
+          className="text-link"
+          href="https://beliapp.co/app/aarnav11"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Beli
+        </a>
+        .
+      </p>
+      <TravelMap />
+      <figure className="bio-inline-media bio-photo-placeholder">
+        Food &amp; cooking photo placeholder
+      </figure>
     </div>
   );
 }

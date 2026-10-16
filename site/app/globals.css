@@ -393,6 +393,115 @@ summary:focus-visible {
   }
 }
 
+.bio-inline-media,
+.travel-map {
+  width: 100%;
+  margin: 1.75rem 0 2rem;
+}
+
+.bio-photo-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  background: var(--surface-subtle);
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.travel-map figcaption {
+  margin-bottom: 0.65rem;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.travel-map-surface {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface-subtle);
+  padding: 0;
+  cursor: crosshair;
+}
+
+.travel-map-surface svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.travel-map-pin {
+  fill: #bc6a4c;
+  stroke: var(--background);
+  stroke-width: 1.5;
+}
+
+.travel-map-selection {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2;
+}
+
+.travel-map .travel-map-note {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.travel-pin-form,
+.travel-pin-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  list-style: none;
+}
+
+.travel-pin-form label {
+  flex: 1 1 10rem;
+  min-width: 0;
+  color: var(--muted);
+}
+
+.travel-pin-form input,
+.travel-button {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--background);
+  padding: 0.45rem 0.65rem;
+  color: var(--foreground);
+  font: inherit;
+}
+
+.travel-pin-form input {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.travel-pin-form input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.travel-button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
 .bio-gallery,
 .bio-media-pair {
   display: grid;
