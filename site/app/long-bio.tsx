@@ -54,9 +54,10 @@ export default function LongBio() {
         Tennis photo placeholder
       </figure>
       <p>
-        I love traveling and getting to know new places through their food. I
-        enjoy finding somewhere new to eat as much as cooking something myself.
-        You can follow my running list of favorites on{' '}
+        I love traveling and getting to know new places through their food. Bali
+        is my favorite place in the world. I enjoy finding somewhere new to eat
+        as much as cooking something myself. You can follow my running list of
+        favorites on{' '}
         <a
           className="text-link"
           href="https://beliapp.co/app/aarnav11"

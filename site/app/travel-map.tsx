@@ -1,6 +1,12 @@
 'use client';
 
-import { useEffect, useState, type KeyboardEvent, type MouseEvent } from 'react';
+import {
+  useEffect,
+  useState,
+  type KeyboardEvent,
+  type MouseEvent,
+} from 'react';
+import { visitedPlaces } from '@/lib/travel';
 
 type Location = { latitude: number; longitude: number };
 type TravelPin = Location & { name: string };
@@ -21,7 +27,8 @@ export default function TravelMap() {
             (pin): pin is TravelPin =>
               typeof pin?.name === 'string' &&
               Number.isFinite(pin?.latitude) &&
-              Number.isFinite(pin?.longitude),
+              Number.isFinite(pin?.longitude) &&
+              !visitedPlaces.some((place) => place.name === pin.name),
           ),
         );
       }
@@ -47,7 +54,8 @@ export default function TravelMap() {
         ? (selected ?? { latitude: 0, longitude: 0 })
         : {
             latitude: 90 - ((event.clientY - bounds.top) / bounds.height) * 180,
-            longitude: ((event.clientX - bounds.left) / bounds.width) * 360 - 180,
+            longitude:
+              ((event.clientX - bounds.left) / bounds.width) * 360 - 180,
           },
     );
   }
@@ -82,7 +90,7 @@ export default function TravelMap() {
       >
         <svg viewBox="0 0 720 360" aria-hidden="true">
           <image href="/images/world-map.svg" width="720" height="360" />
-          {pins.map((pin, index) => (
+          {[...visitedPlaces, ...pins].map((pin, index) => (
             <circle
               key={index}
               className="travel-map-pin"
@@ -106,8 +114,8 @@ export default function TravelMap() {
       <p className="travel-map-note">
         Click a spot to add a pin; arrow keys fine-tune its position.{' '}
         {persistent
-          ? 'Pins are saved in this browser.'
-          : 'Browser storage is unavailable; pins will last for this visit.'}
+          ? 'Extra pins are saved in this browser.'
+          : 'Browser storage is unavailable; extra pins will last for this visit.'}
       </p>
       {selected && (
         <form
@@ -145,22 +153,25 @@ export default function TravelMap() {
           </button>
         </form>
       )}
-      {pins.length > 0 && (
-        <ul className="travel-pin-list" aria-label="Pinned places">
-          {pins.map((pin, index) => (
-            <li key={index}>
-              <button
-                className="travel-button"
-                type="button"
-                aria-label={`Remove ${pin.name} pin`}
-                onClick={() => savePins(pins.filter((_, i) => i !== index))}
-              >
-                {pin.name} <span aria-hidden="true">×</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className="travel-pin-list" aria-label="Pinned places">
+        {visitedPlaces.map((place) => (
+          <li key={place.name}>
+            <span className="travel-place">{place.name}</span>
+          </li>
+        ))}
+        {pins.map((pin, index) => (
+          <li key={index}>
+            <button
+              className="travel-button"
+              type="button"
+              aria-label={`Remove ${pin.name} pin`}
+              onClick={() => savePins(pins.filter((_, i) => i !== index))}
+            >
+              {pin.name} <span aria-hidden="true">×</span>
+            </button>
+          </li>
+        ))}
+      </ul>
     </figure>
   );
 }

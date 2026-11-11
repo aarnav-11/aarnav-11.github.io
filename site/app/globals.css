@@ -567,6 +567,7 @@ summary:focus-visible {
 }
 
 .travel-pin-form input,
+.travel-place,
 .travel-button {
   border: 1px solid var(--line);
   border-radius: 4px;

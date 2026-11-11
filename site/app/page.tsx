@@ -6,6 +6,9 @@ import LongBio from './long-bio';
 
 const experience = [
   {
+    title: 'Retriever Labs — Safety Researcher',
+  },
+  {
     title: 'UCLA DTS — AI Software Engineer',
     date: 'Aug 2026–Present',
   },
@@ -162,7 +165,7 @@ export default function Home() {
                   {experience.map(({ title, date }) => (
                     <div className="blog-row" key={title}>
                       <span>{title}</span>
-                      <span className="blog-date">{date}</span>
+                      {date && <span className="blog-date">{date}</span>}
                     </div>
                   ))}
                 </div>
