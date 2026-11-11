@@ -148,6 +148,97 @@ summary:focus-visible {
   line-height: 1.5;
 }
 
+.coursework-home {
+  display: inline-block;
+}
+
+.coursework-title {
+  margin-bottom: 0.65rem;
+  color: var(--text-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.coursework-section {
+  margin-top: 2.75rem;
+}
+
+.coursework-section h2 {
+  margin-bottom: 1rem;
+  color: var(--text-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.coursework-list,
+.coursework-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coursework-list {
+  border-top: 1px solid var(--line);
+}
+
+.coursework-entry {
+  border-bottom: 1px solid var(--line);
+  padding: 1.25rem 0;
+}
+
+.coursework-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.coursework-entry h3 {
+  margin: 0.35rem 0;
+  color: var(--text-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.coursework-entry p {
+  margin-bottom: 0.75rem;
+}
+
+.test-scores {
+  border-block: 1px solid var(--line);
+  padding: 1rem 0;
+}
+
+.test-scores summary {
+  cursor: pointer;
+}
+
+.test-scores + .test-scores {
+  border-top: 0;
+}
+
+.test-subjects {
+  margin: 1rem 0 0;
+}
+
+.test-subjects > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 0.35rem 0;
+}
+
+.test-subjects dd {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+
 .bio-section {
   margin-bottom: 3.25rem;
 }
