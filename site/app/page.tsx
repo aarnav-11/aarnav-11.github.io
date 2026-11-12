@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import LongBio from './long-bio';
 
 const experience = [
@@ -68,9 +67,9 @@ export default function Home() {
                 className="profile-links"
                 aria-label="Site and profile links"
               >
-                <Link className="text-link" href="/coursework">
+                <a className="text-link" href="/coursework">
                   Coursework
-                </Link>
+                </a>
                 <a
                   className="text-link"
                   href="/documents/aarnav-choudhary-resume.pdf"

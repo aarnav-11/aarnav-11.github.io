@@ -152,6 +152,14 @@ summary:focus-visible {
   display: inline-block;
 }
 
+.coursework-page .content-frame {
+  --content-width: 860px;
+}
+
+.coursework-page .site-header {
+  margin-bottom: 1.25rem;
+}
+
 .coursework-title {
   margin-bottom: 0.65rem;
   color: var(--text-heading);
@@ -161,56 +169,65 @@ summary:focus-visible {
 }
 
 .coursework-section {
-  margin-top: 2.75rem;
+  margin-top: 1.4rem;
 }
 
 .coursework-section h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--text-heading);
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
+.coursework-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.coursework-columns h3 {
+  margin: 0 0 0.45rem;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+}
+
 .coursework-list,
-.coursework-links {
+.coursework-activities {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.coursework-list {
-  border-top: 1px solid var(--line);
+.coursework-activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.15rem;
+  font-size: 14px;
 }
 
 .coursework-entry {
-  border-bottom: 1px solid var(--line);
-  padding: 1.25rem 0;
+  padding: 0.2rem 0;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.coursework-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1rem;
+.coursework-code {
   color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.coursework-repository {
   font-family: var(--font-ui);
   font-size: 13px;
 }
 
-.coursework-entry h3 {
-  margin: 0.35rem 0;
-  color: var(--text-heading);
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.coursework-entry p {
-  margin-bottom: 0.75rem;
-}
-
 .test-scores {
   border-block: 1px solid var(--line);
-  padding: 1rem 0;
+  padding: 0.55rem 0;
 }
 
 .test-scores summary {
@@ -681,6 +698,11 @@ summary:focus-visible {
 
   .notes-list {
     columns: 1;
+  }
+
+  .coursework-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .blog-row {

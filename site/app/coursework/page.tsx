@@ -1,37 +1,63 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import {
   activities,
   actSubjects,
   coursework,
   ibSubjects,
+  type Course,
 } from '@/lib/coursework';
 
 export const metadata: Metadata = {
   title: 'Coursework — Aarnav Choudhary',
-  description:
-    'UCLA coursework, campus activities, independent learning, and the code I wrote along the way.',
+  description: 'UCLA coursework, clubs, independent learning, and test scores.',
 };
 
-export default function CourseworkPage() {
+function CourseList({ courses }: { courses: Course[] }) {
   return (
-    <main className="site-shell">
+    <ul className="coursework-list">
+      {courses.map(({ code, title, links }) => (
+        <li className="coursework-entry" key={code}>
+          <span className="coursework-code">{code}</span> — {title}
+          {links.map(({ label, href }) => (
+            <span key={href}>
+              {' · '}
+              <a
+                className="text-link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {label}
+              </a>
+            </span>
+          ))}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default function CourseworkPage() {
+  const [mathematics, computerScience, independentLearning] = coursework;
+
+  return (
+    <main className="site-shell coursework-page">
       <article className="content-frame">
         <header className="site-header">
-          <Link
+          <a
             href="/"
             className="site-title coursework-home"
             aria-label="aarnav home"
           >
             <span className="site-title-at">@</span>aarnav
-          </Link>
+          </a>
           <nav className="profile-links" aria-label="Site navigation">
-            <Link className="text-link" href="/">
+            <a className="text-link" href="/">
               Home
-            </Link>
-            <Link className="text-link" href="/coursework" aria-current="page">
+            </a>
+            <a className="text-link" href="/coursework" aria-current="page">
               Coursework
-            </Link>
+            </a>
             <a
               className="text-link"
               href="https://github.com/aarnav-11"
@@ -44,10 +70,43 @@ export default function CourseworkPage() {
         </header>
 
         <h1 className="coursework-title">Coursework</h1>
-        <p>
-          My classes at UCLA, things I’ve learned on my own, and the code along
-          the way.
-        </p>
+
+        <section className="coursework-section" aria-labelledby="clubs-heading">
+          <h2 id="clubs-heading">Clubs &amp; societies</h2>
+          <ul className="coursework-activities">
+            {activities.map((activity) => (
+              <li key={activity}>{activity}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section
+          className="coursework-section"
+          aria-labelledby="courses-heading"
+        >
+          <h2 id="courses-heading">Coursework</h2>
+          <div className="coursework-columns">
+            {[mathematics, computerScience].map(({ title, courses }) => (
+              <section key={title}>
+                <h3>{title}</h3>
+                <CourseList courses={courses} />
+              </section>
+            ))}
+          </div>
+        </section>
+
+        <section className="coursework-section">
+          <h2>{independentLearning.title}</h2>
+          <CourseList courses={independentLearning.courses} />
+          <a
+            className="text-link coursework-repository"
+            href={independentLearning.repository}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Repository
+          </a>
+        </section>
 
         <section className="coursework-section">
           <h2>Test scores</h2>
@@ -74,51 +133,6 @@ export default function CourseworkPage() {
             </dl>
           </details>
           <div className="test-scores">IELTS — 8.5/9</div>
-        </section>
-
-        {coursework.map(({ title, courses }) => (
-          <section className="coursework-section" key={title}>
-            <h2>{title}</h2>
-            <ul className="coursework-list">
-              {courses.map((course) => (
-                <li className="coursework-entry" key={course.code}>
-                  <div className="coursework-meta">
-                    <span>{course.code}</span>
-                    {course.term && <span>{course.term}</span>}
-                  </div>
-                  <h3>{course.title}</h3>
-                  {course.description && <p>{course.description}</p>}
-                  {course.links.length > 0 && (
-                    <ul
-                      className="profile-links coursework-links"
-                      aria-label={`${course.code} code`}
-                    >
-                      {course.links.map(({ label, href }) => (
-                        <li key={href}>
-                          <a
-                            className="text-link"
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-        <section className="coursework-section">
-          <h2>Activities &amp; societies</h2>
-          <ul className="notes-list">
-            {activities.map((activity) => (
-              <li key={activity}>{activity}</li>
-            ))}
-          </ul>
         </section>
       </article>
     </main>

@@ -1,8 +1,6 @@
 export type Course = {
   code: string;
   title: string;
-  term?: string;
-  description?: string;
   links: { label: string; href: string }[];
 };
 
@@ -32,10 +30,13 @@ export const actSubjects = [
 ];
 
 // Add classes here. Leave links empty for courses without public code.
-// Only include a term when it is known; repository dates are not course dates.
-export const coursework: { title: string; courses: Course[] }[] = [
+export const coursework: {
+  title: string;
+  courses: Course[];
+  repository?: string;
+}[] = [
   {
-    title: 'Mathematics · UCLA',
+    title: 'Mathematics',
     courses: [
       {
         code: 'Math 31B',
@@ -95,95 +96,55 @@ export const coursework: { title: string; courses: Course[] }[] = [
     ],
   },
   {
-    title: 'Computer Science · UCLA',
+    title: 'Computer science',
     courses: [
       {
         code: 'CS 31',
         title: 'Introduction to Computer Science I',
-        term: 'Winter 2025',
-        description:
-          'C++ fundamentals, arrays, classes, and testing. Projects include flight and frequent-flyer classes and a Beetle game.',
         links: [
           {
-            label: 'Course repository',
+            label: 'Repository',
             href: 'https://github.com/aarnav-11/UCLA_CS31_W25_projects',
-          },
-          {
-            label: 'Beetle game',
-            href: 'https://github.com/aarnav-11/UCLA_CS31_W25_projects/tree/main/Project_6',
           },
         ],
       },
       {
         code: 'CS 32',
         title: 'Introduction to Computer Science II',
-        term: 'Summer 2025',
-        description:
-          'Object-oriented programming, data structures, and algorithms in C++. Projects include a task list and a product class hierarchy.',
         links: [
           {
-            label: 'Course repository',
+            label: 'Repository',
             href: 'https://github.com/aarnav-11/UCLA_CS32_S25_Projects',
-          },
-          {
-            label: 'Task list',
-            href: 'https://github.com/aarnav-11/UCLA_CS32_S25_Projects/tree/main/Project_2_final/Project_2_final',
-          },
-          {
-            label: 'Product hierarchy',
-            href: 'https://github.com/aarnav-11/UCLA_CS32_S25_Projects/tree/main/Project_3_final/Project_3_final',
           },
         ],
       },
       {
         code: 'CS 33',
         title: 'Introduction to Computer Organization',
-        description:
-          'Low-level programming and data representation, including bit manipulation in the CS:APP Data Lab.',
         links: [
           {
-            label: 'Course repository',
+            label: 'Repository',
             href: 'https://github.com/aarnav-11/CS33-UCLA',
-          },
-          {
-            label: 'Data Lab',
-            href: 'https://github.com/aarnav-11/CS33-UCLA/blob/main/Lab_1/bits.c',
           },
         ],
       },
       {
         code: 'CS 35L',
         title: 'Software Construction',
-        description:
-          'Stash, a full-stack note-taking app built with React, Express, and SQLite, with authentication, a browser extension, and AI-assisted tagging.',
         links: [
           {
-            label: 'Stash · final project',
+            label: 'Stash Final Project',
             href: 'https://github.com/aarnav-11/35L_final_project',
-          },
-          {
-            label: 'Frontend',
-            href: 'https://github.com/aarnav-11/35L_final_project/tree/main/cs35l_project/src',
-          },
-          {
-            label: 'Backend',
-            href: 'https://github.com/aarnav-11/35L_final_project/tree/main/cs35l_project/server',
           },
         ],
       },
       {
         code: 'CS M146',
         title: 'Introduction to Machine Learning',
-        description:
-          'Classification and model evaluation, with work on majority-vote baselines, decision trees, and k-nearest neighbors.',
         links: [
           {
-            label: 'Course repository',
+            label: 'Repository',
             href: 'https://github.com/aarnav-11/CSM146-UCLA',
-          },
-          {
-            label: 'Assignment 1 notebook',
-            href: 'https://github.com/aarnav-11/CSM146-UCLA/blob/main/Assignment_1_final.ipynb',
           },
         ],
       },
@@ -206,42 +167,17 @@ export const coursework: { title: string; courses: Course[] }[] = [
   },
   {
     title: 'Independent learning',
+    repository: 'https://github.com/aarnav-11/zero_to_hero_karpathy',
     courses: [
       {
         code: 'Karpathy',
         title: 'Neural Networks: Zero to Hero',
-        description:
-          'Self-directed neural network exercises, including Micrograd and Makemore.',
-        links: [
-          {
-            label: 'Learning repository',
-            href: 'https://github.com/aarnav-11/zero_to_hero_karpathy',
-          },
-          {
-            label: 'Micrograd',
-            href: 'https://github.com/aarnav-11/zero_to_hero_karpathy/tree/main/MicroGrad',
-          },
-          {
-            label: 'Makemore',
-            href: 'https://github.com/aarnav-11/zero_to_hero_karpathy/tree/main/Makemore',
-          },
-        ],
+        links: [],
       },
       {
         code: 'CS 336',
         title: 'Assignment 1: Basics',
-        description:
-          'Self-directed work with the Stanford CS 336 assignment materials, including byte-pair encoding and tokenization.',
-        links: [
-          {
-            label: 'Assignment folder',
-            href: 'https://github.com/aarnav-11/zero_to_hero_karpathy/tree/main/cs336_assignment1',
-          },
-          {
-            label: 'BPE code',
-            href: 'https://github.com/aarnav-11/zero_to_hero_karpathy/blob/main/cs336_assignment1/cs336_basics/BPE.py',
-          },
-        ],
+        links: [],
       },
     ],
   },
