@@ -33,7 +33,6 @@ export const actSubjects = [
 export const coursework: {
   title: string;
   courses: Course[];
-  repository?: string;
 }[] = [
   {
     title: 'Mathematics',
@@ -167,7 +166,6 @@ export const coursework: {
   },
   {
     title: 'Independent learning',
-    repository: 'https://github.com/aarnav-11/zero_to_hero_karpathy',
     courses: [
       {
         code: 'Karpathy',
@@ -175,8 +173,18 @@ export const coursework: {
         links: [],
       },
       {
-        code: 'CS 336',
-        title: 'Assignment 1: Basics',
+        code: 'Stanford CS336',
+        title: 'Language Modeling from Scratch',
+        links: [],
+      },
+      {
+        code: 'Stanford CS224N',
+        title: 'Natural Language Processing with Deep Learning',
+        links: [],
+      },
+      {
+        code: 'Stanford CS234',
+        title: 'Reinforcement Learning',
         links: [],
       },
     ],

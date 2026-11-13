@@ -98,14 +98,6 @@ export default function CourseworkPage() {
         <section className="coursework-section">
           <h2>{independentLearning.title}</h2>
           <CourseList courses={independentLearning.courses} />
-          <a
-            className="text-link coursework-repository"
-            href={independentLearning.repository}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Repository
-          </a>
         </section>
 
         <section className="coursework-section">

@@ -6,6 +6,7 @@ import LongBio from './long-bio';
 const experience = [
   {
     title: 'Retriever Labs — Safety Researcher',
+    date: 'Sep 2026–Present',
   },
   {
     title: 'UCLA DTS — AI Software Engineer',
